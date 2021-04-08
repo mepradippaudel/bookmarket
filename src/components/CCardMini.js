@@ -3,7 +3,7 @@ import React from "react";
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import { convertDollerValueTORupee } from "../helpers";
 
-const CCard = ({
+const CCardMini = ({
   data,
   data: { id, name, image, price, stock, published_date, author, genre },
   handleClick,
@@ -15,14 +15,14 @@ const CCard = ({
         <Card.Title>{name}</Card.Title>
         <Card.Text>{convertDollerValueTORupee(price)}</Card.Text>
       </Card.Body>
-      <ListGroup className="list-group-flush">
+      {/* <ListGroup className="list-group-flush">
         <ListGroupItem>Stock: {stock}</ListGroupItem>
         <ListGroupItem>
           {moment(published_date).format("DD-MM-YYYY")}
         </ListGroupItem>
         <ListGroupItem>{author}</ListGroupItem>
         <ListGroupItem>{genre}</ListGroupItem>
-      </ListGroup>
+      </ListGroup> */}
       <Card.Footer>
         <Button onClick={() => handleClick(data)} variant="primary">
           Add to cart
@@ -31,4 +31,4 @@ const CCard = ({
     </Card>
   );
 };
-export default CCard;
+export default CCardMini;
