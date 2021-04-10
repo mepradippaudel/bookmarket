@@ -6,4 +6,11 @@ const convertDollerValueTORupee = (price) => {
   return (value * currentNepaliDollerRate).toFixed(2);
 };
 
-export { convertDollerValueTORupee };
+const getTotalAmount = (data) => {
+  return data.reduce((sum, current) => {
+    return (sum =
+      sum + convertDollerValueTORupee(current.price) * current.quantity);
+  }, 0);
+};
+
+export { convertDollerValueTORupee, getTotalAmount };
